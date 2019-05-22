@@ -24,7 +24,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PWA-Wf-aGN">
                                     <rect key="frame" x="0.0" y="8" width="414" height="84"/>
                                     <subviews>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tK1-a6-ctJ">
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tK1-a6-ctJ">
                                             <rect key="frame" x="120.5" y="0.0" width="173" height="21"/>
                                             <segments>
                                                 <segment title="Apps"/>
@@ -35,11 +35,16 @@
                                                 <action selector="segmentedControlSelected:" destination="YsC-ix-08Y" eventType="valueChanged" id="D9R-n4-Eiw"/>
                                             </connections>
                                         </segmentedControl>
-                                        <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yRh-AC-sAV">
+                                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="yRh-AC-sAV">
                                             <rect key="frame" x="0.0" y="28" width="414" height="56"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </searchBar>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="yRh-AC-sAV" firstAttribute="leading" secondItem="PWA-Wf-aGN" secondAttribute="leading" id="ClI-ad-eKv"/>
+                                        <constraint firstAttribute="bottom" secondItem="yRh-AC-sAV" secondAttribute="bottom" id="JUe-ct-AME"/>
+                                        <constraint firstAttribute="trailing" secondItem="yRh-AC-sAV" secondAttribute="trailing" id="eBG-0J-NMW"/>
+                                    </constraints>
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -51,7 +56,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="rHg-mY-W00" detailTextLabel="UnV-ss-3gH" style="IBUITableViewCellStyleSubtitle" id="Hkf-FJ-3dn">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" textLabel="rHg-mY-W00" detailTextLabel="UnV-ss-3gH" style="IBUITableViewCellStyleSubtitle" id="Hkf-FJ-3dn">
                                 <rect key="frame" x="0.0" y="128" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hkf-FJ-3dn" id="rBE-aU-e7v">
