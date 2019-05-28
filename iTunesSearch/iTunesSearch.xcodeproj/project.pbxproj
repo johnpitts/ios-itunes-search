@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC860743229D48490021B34B /* AppearanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC860742229D48490021B34B /* AppearanceHelper.swift */; };
 		FCE7E883228B66160039EB84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7E882228B66160039EB84 /* AppDelegate.swift */; };
 		FCE7E888228B66160039EB84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE7E886228B66160039EB84 /* Main.storyboard */; };
 		FCE7E88A228B66170039EB84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE7E889228B66170039EB84 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC860742229D48490021B34B /* AppearanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceHelper.swift; sourceTree = "<group>"; };
 		FCE7E87F228B66160039EB84 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE7E882228B66160039EB84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCE7E887228B66160039EB84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				FCE7E882228B66160039EB84 /* AppDelegate.swift */,
+				FC860742229D48490021B34B /* AppearanceHelper.swift */,
 				FCE7E886228B66160039EB84 /* Main.storyboard */,
 				FCE7E89B228B80540039EB84 /* SearchResultsTableViewController.swift */,
 				FCE7E89A228B7C8A0039EB84 /* MODEL */,
@@ -157,6 +160,7 @@
 				FCE7E89C228B80540039EB84 /* SearchResultsTableViewController.swift in Sources */,
 				FCE7E883228B66160039EB84 /* AppDelegate.swift in Sources */,
 				FCE7E899228B7C770039EB84 /* SearchResultController.swift in Sources */,
+				FC860743229D48490021B34B /* AppearanceHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
