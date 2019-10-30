@@ -10,12 +10,23 @@ import Foundation
 
 class SearchResultController {
     
+    enum HTTPMethod: String {
+        case get = "GET"
+        case put = "PUT"
+        case post = "POST"
+        case delete = "DELETE"
+    }
+    
+    let baseURL = URL(string: "https://itunes.apple.com")!
+    
+    var searchResults: [SearchResult] = []
+    
+    
     func performSearch(searchTerm: String, resultType: ResultType, completion: @escaping (Error?) -> Void) {
         
         let searchURL = baseURL.appendingPathComponent("search") // i mightg need to put '?' after search
 
-        // i don't know why this is even here, doesn't URL(string: "https....") take care of this??
-        // Do I need urlComponents if all i'm using is the baseURL?
+        // urlComponents is set up here, bc you'll need to attach query items to it's class
         var urlComponents = URLComponents(url: searchURL, resolvingAgainstBaseURL: true)
         
         let searchQueryItem2 = URLQueryItem(name: "entity", value: resultType.rawValue)
@@ -52,12 +63,15 @@ class SearchResultController {
             completion(error)
             return
         }
-        
+            print(String(data: data, encoding: .utf8)!)            // MUSIC DATA coming in JUST FINE
+            print("\n")
         do {
         
             let decoder = JSONDecoder()
         
-            let searchResults = try decoder.decode(SearchResults.self, from: data)
+            let searchResults = try decoder.decode(SearchResults.self, from: data)   // try fails-> goes to catch
+            
+            print("\(searchResults) \n")
         
             self.searchResults = searchResults.results   // data goes into our model
         
@@ -73,14 +87,4 @@ class SearchResultController {
         dataTask.resume()
     }
     
-    enum HTTPMethod: String {
-        case get = "GET"
-        case put = "PUT"
-        case post = "POST"
-        case delete = "DELETE"
-    }
-    
-    let baseURL = URL(string: "https://itunes.apple.com")!
-    
-    var searchResults: [SearchResult] = []
 }

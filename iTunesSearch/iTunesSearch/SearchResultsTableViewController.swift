@@ -10,14 +10,23 @@ import UIKit
 
 class SearchResultsTableViewController: UITableViewController, UISearchBarDelegate {
 
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    @IBOutlet var searchBar: UISearchBar!
+    
+    let searchResultsController = SearchResultController()
+    
+    var resultType: ResultType!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.backgroundColor = AppearanceHelper.backgroundBlue
         
         searchBar.delegate = self
     }
     
     @IBAction func segmentedControlSelected(_ sender: Any) {
-        
+        searchBarSearchButtonClicked(searchBar)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -55,19 +64,19 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
      
         let searchResult = searchResultsController.searchResults[indexPath.row]
      
+        // elected not to create a seperate "style" function here, but easily could have
         cell.textLabel?.text = searchResult.title
+        cell.textLabel?.textColor = AppearanceHelper.floridaOrange
+        cell.textLabel?.font = AppearanceHelper.customFont(with: .body, pointSize: 30)
         cell.detailTextLabel?.text = searchResult.creator
+        cell.detailTextLabel?.textColor = AppearanceHelper.floridaOrange
+        cell.detailTextLabel?.font = AppearanceHelper.customFont(with: .footnote, pointSize: 20)
+        cell.backgroundColor = AppearanceHelper.backgroundBlue
         
 
 
         return cell
     }
 
-    @IBOutlet var segmentedControl: UISegmentedControl!
-    @IBOutlet var searchBar: UISearchBar!
-    
-    let searchResultsController = SearchResultController()
-    
-    var resultType: ResultType!
     
 }

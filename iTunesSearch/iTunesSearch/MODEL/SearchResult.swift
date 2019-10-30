@@ -16,8 +16,10 @@ struct SearchResult: Codable {
         case creator = "artistName"
     }
     
-    var title: String
-    var creator: String
+    var creator: String?
+    var title: String?
+
+    //   if you want to return MOVIES I believe another property will need to be added here
 }
 
 struct SearchResults: Codable {
